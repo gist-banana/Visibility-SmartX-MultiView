@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-    <title>MultiView : Flow Rules and Statistics View</title>
+    <title>Multi-View : Flow Rules and Statistics View</title>
     <style type="text/css">
 		body {
 			color: #d3d3d3;
@@ -21,11 +21,11 @@
 			background: #ffffff;
 		}
     </style>
-    <script src="../bower_components/jquery/dist/jquery.min.js"></script>
-    <script type="text/javascript" src="javascripts/vis.js"></script>
-    <link href="stylesheets/vis.css" rel="stylesheet" type="text/css">
-    <link type="text/css" rel="stylesheet" href="stylesheets/opentip.css">
-    <script type="text/javascript" src="javascripts/opentip-jquery.js"></script>
+    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+	<script type="text/javascript" src="javascripts/vis.js"></script>
+	<link href="stylesheets/vis.css" rel="stylesheet" type="text/css">
+	<link type="text/css" rel="stylesheet" href="../node_modules/opentip/css/opentip.css">
+	<script type="text/javascript" src="../node_modules/opentip/downloads/opentip-jquery.js"></script>
     <script type="text/javascript">
 		var serverIP="103.22.221.56";
 		var serverPort="3011";
@@ -192,7 +192,7 @@
 						enabled:true,
 						levelSeparation: 150,
 						nodeSpacing: 240,
-						direction: "DU",
+						direction: "DU"
 					}
 				},
 				physics:{

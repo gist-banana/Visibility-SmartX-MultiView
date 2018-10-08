@@ -1,0 +1,15 @@
+[Unit]
+Description=Packet Tracing using IO-Visor Tools
+After=network.target
+After=network-online.target
+
+[Service]
+User=root
+ExecStart=/usr/bin/python /opt/FlowAgent/control_plane_tracing.py
+StandardOutput=null
+StandardError=null
+Restart=on-failure
+RestartSec=30
+
+[Install]
+WantedBy=default.target
