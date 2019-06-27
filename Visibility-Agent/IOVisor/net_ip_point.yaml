@@ -1,0 +1,12 @@
+---
+point: "NetworkIpPacketPoint"
+level: "resource"
+type: "physical_networking"
+
+msg_queue:
+  ipaddress: "203.237.53.60"
+  port: "50321"
+
+option:
+  output_type: "stream"
+  nic: "enp0s31f6"
