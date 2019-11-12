@@ -120,7 +120,7 @@ else:
           parent="ffff:fff2", classid=1, direct_action=True)
 
 hash_addr = b.get_table("hash_addr")
-dropcnt = b.get_table("dropcnt")
+pktcnt = b.get_table("pktcnt")
 
 prev = [0] * 256
 print("Printing drops per IP protocol-number, hit CTRL+C to stop")
@@ -129,8 +129,8 @@ while 1:
     #under while
 #    try:
         # here
-    for k in dropcnt.keys():
-        val = dropcnt[k].value if maptype == "array" else dropcnt.sum(k).value
+    for k in pktcnt.keys():
+        val = pktcnt[k].value if maptype == "array" else pktcnt.sum(k).value
         i = k.value
         ip_addr = str(convert_ip_to_bin((hash_addr.items()[0][1])))
 #        print('\n')

@@ -7,7 +7,7 @@
 #include <linux/ip.h>
 #include <linux/ipv6.h>
 
-BPF_TABLE(MAPTYPE, uint32_t, long, dropcnt, 256);
+BPF_TABLE(MAPTYPE, uint32_t, long, pktcnt, 256);
 BPF_ARRAY(hash_addr, u64,12);
 
 static inline int parse_ipv4(void *data, u64 nh_off, void *data_end) {
@@ -84,7 +84,7 @@ int xdp_prog1(struct CTXTYPE *ctx) {
         index = 0;
 
     hash_addr.update(&in0, &ip_addr);
-    value = dropcnt.lookup(&index);
+    value = pktcnt.lookup(&index);
 
     if (value)
         __sync_fetch_and_add(value, 1);
